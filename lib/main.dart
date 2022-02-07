@@ -23,6 +23,15 @@ class MyApp extends StatelessWidget {
       routes: AppRoutes.getAppRoutes(),
       // Permite atrapar rutas dinàmicas (las cuales no estàn declaradas en el listado de routes)
       onGenerateRoute: AppRoutes.onGenerateRoute,
+
+      // ? Flutter permite definir un tema principal para nuestra App, si embargo, se recomienda hacer una copia de uno que ya se tenga por defecto por que son muchas cosas que se tienen que especoficar para cada widget que existe en Flutter
+      // copyWith hace una copia del tema seleccionado para proceder a sobre-escribir el estilo que necesitamos
+      // Todos los componentes que no tengan definido explicitamente una propiedad de tema específico, se verán afectados por esta configuración Global
+      theme: ThemeData.light().copyWith(
+          // Color primario (hay ciertos Widgets que usan este color)
+          primaryColor: Colors.cyanAccent,
+          // AppBar Theme
+          appBarTheme: AppBarTheme(elevation: 0, color: Colors.cyan)),
     );
   }
 }

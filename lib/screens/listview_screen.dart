@@ -11,9 +11,9 @@ class ListviewScreen extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Listview Personalizado'),
           // Retirar sombra en la barra de titulo
-          elevation: 0,
+          // elevation: 0,
           // Cambiar color de fondo
-          backgroundColor: Colors.deepOrange,
+          // backgroundColor: Colors.deepOrange,
         ),
         // Listview tiene varios constructores por nombre para mostrar de diferente manera el listado de sus elementos
         body: ListView.separated(

@@ -10,8 +10,8 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text('Componentes en Flutter'),
-          backgroundColor: Colors.amberAccent,
-          elevation: 0,
+          // backgroundColor: Colors.amberAccent,
+          // elevation: 0,
         ),
         // Pintar las opciones de ménú para navegar en entre pantallas de al aplicación
         body: ListView.separated(
@@ -20,7 +20,7 @@ class HomeScreen extends StatelessWidget {
                   title: Text(AppRoutes.menuOptions[index].name),
                   leading: Icon(
                     AppRoutes.menuOptions[index].icon,
-                    color: Colors.pinkAccent,
+                    color: Colors.cyan,
                   ),
                   onTap: () {
                     // ! Forma anterior para navegar. Podemos especificar el tipo de animación (personalizar)
