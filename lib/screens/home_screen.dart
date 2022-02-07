@@ -1,3 +1,4 @@
+import 'package:componentes_app/screens/screens.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -16,7 +17,16 @@ class HomeScreen extends StatelessWidget {
                   title: Text('Nombre de ruta'),
                   leading: Icon(Icons.accessibility_sharp),
                   onTap: () {
-                    print('Moviendo a otra ruta');
+                    // ! Forma anterior para navegar. Podemos especificar el tipo de animación (personalizar)
+                    /*final route = MaterialPageRoute(
+                        builder: (context) => ListviewScreen());
+                    Navigator.push(context, route);*/
+
+                    // Navegar a otra ruta
+                    Navigator.pushNamed(context, 'listview');
+
+                    // Navegar a otra ruta sin poder regresar a la anterior (especial para login)
+                    // Navigator.pushReplacement(context, newRoute)
                   },
                 ),
             separatorBuilder: (_, __) => Divider(),

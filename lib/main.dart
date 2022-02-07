@@ -24,6 +24,12 @@ class MyApp extends StatelessWidget {
         'listview': (BuildContext context) => ListviewScreen(),
         'listview_standar': (BuildContext context) => ListviewStandarScreen()
       },
+      // Permite atrapar rutas dinàmicas (las cuales no estàn declaradas en el listado de routes)
+      onGenerateRoute: (settings) {
+        print(settings);
+        // Retornar una ruta con la pantalla en cuestion
+        return MaterialPageRoute(builder: (context) => ListviewStandarScreen());
+      },
     );
   }
 }
