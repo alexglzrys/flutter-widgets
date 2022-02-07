@@ -1,3 +1,4 @@
+import 'package:componentes_app/router/app_routes.dart';
 import 'package:flutter/material.dart';
 
 // Este paquete exporta todos los componentes a usar como pantallas de nuestra aplicación
@@ -17,19 +18,11 @@ class MyApp extends StatelessWidget {
       // home: ListviewScreen()
 
       // Cuando se trabaja con rutas no hay un home inicial, existe una ruta inicial
-      initialRoute: 'home',
+      initialRoute: AppRoutes.initialRoute,
       // El listado de rutas requiere una ruta y un componente a mostrar para esa ruta
-      routes: {
-        'home': (BuildContext context) => HomeScreen(),
-        'listview': (BuildContext context) => ListviewScreen(),
-        'listview_standar': (BuildContext context) => ListviewStandarScreen()
-      },
+      routes: AppRoutes.routes,
       // Permite atrapar rutas dinàmicas (las cuales no estàn declaradas en el listado de routes)
-      onGenerateRoute: (settings) {
-        print(settings);
-        // Retornar una ruta con la pantalla en cuestion
-        return MaterialPageRoute(builder: (context) => ListviewStandarScreen());
-      },
+      onGenerateRoute: AppRoutes.onGenerateRoute,
     );
   }
 }
