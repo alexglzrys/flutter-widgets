@@ -1,5 +1,6 @@
 import 'package:componentes_app/router/app_routes.dart';
 import 'package:componentes_app/screens/screens.dart';
+import 'package:componentes_app/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -20,7 +21,7 @@ class HomeScreen extends StatelessWidget {
                   title: Text(AppRoutes.menuOptions[index].name),
                   leading: Icon(
                     AppRoutes.menuOptions[index].icon,
-                    color: Colors.cyan,
+                    color: AppTheme.primary,
                   ),
                   onTap: () {
                     // ! Forma anterior para navegar. Podemos especificar el tipo de animación (personalizar)
