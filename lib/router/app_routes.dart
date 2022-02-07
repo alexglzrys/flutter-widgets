@@ -1,3 +1,4 @@
+import 'package:componentes_app/models/models.dart';
 import 'package:componentes_app/screens/screens.dart';
 import 'package:flutter/material.dart';
 
@@ -13,11 +14,41 @@ import 'package:flutter/material.dart';
 class AppRoutes {
   static const initialRoute = 'home';
 
-  static Map<String, Widget Function(BuildContext)> routes = {
+  // Definir mi lista de rutas (esto ayuda para definir su personalización)
+  static final menuOptions = <MenuOption>[
+    MenuOption(
+        route: 'home',
+        name: 'Home Screen',
+        screen: HomeScreen(),
+        icon: Icons.home),
+    MenuOption(
+        route: 'listview',
+        name: 'Componentes en Flutter',
+        screen: ListviewScreen(),
+        icon: Icons.access_alarm),
+    MenuOption(
+        route: 'listview_standar',
+        name: 'ListView Standar',
+        screen: ListviewStandarScreen(),
+        icon: Icons.zoom_out_map)
+  ];
+
+  /*static Map<String, Widget Function(BuildContext)> routes = {
     'home': (BuildContext context) => HomeScreen(),
     'listview': (BuildContext context) => ListviewScreen(),
     'listview_standar': (BuildContext context) => ListviewStandarScreen()
-  };
+  };*/
+
+  static Map<String, Widget Function(BuildContext)> getAppRoutes() {
+    Map<String, Widget Function(BuildContext)> appRoutes = {};
+    // iterar por los elementos de opciones de menu
+    for (final option in menuOptions) {
+      // Generar un path como lo espera la propiedad routes
+      appRoutes.addAll({option.route: (BuildContext context) => option.screen});
+    }
+
+    return appRoutes;
+  }
 
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     // print(settings);

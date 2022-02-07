@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       // Cuando se trabaja con rutas no hay un home inicial, existe una ruta inicial
       initialRoute: AppRoutes.initialRoute,
       // El listado de rutas requiere una ruta y un componente a mostrar para esa ruta
-      routes: AppRoutes.routes,
+      routes: AppRoutes.getAppRoutes(),
       // Permite atrapar rutas dinàmicas (las cuales no estàn declaradas en el listado de routes)
       onGenerateRoute: AppRoutes.onGenerateRoute,
     );

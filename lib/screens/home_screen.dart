@@ -1,3 +1,4 @@
+import 'package:componentes_app/router/app_routes.dart';
 import 'package:componentes_app/screens/screens.dart';
 import 'package:flutter/material.dart';
 
@@ -12,10 +13,15 @@ class HomeScreen extends StatelessWidget {
           backgroundColor: Colors.amberAccent,
           elevation: 0,
         ),
+        // Pintar las opciones de ménú para navegar en entre pantallas de al aplicación
         body: ListView.separated(
             itemBuilder: (context, index) => ListTile(
-                  title: Text('Nombre de ruta'),
-                  leading: Icon(Icons.accessibility_sharp),
+                  // personalizar el componente con la información de cada Opción de menú
+                  title: Text(AppRoutes.menuOptions[index].name),
+                  leading: Icon(
+                    AppRoutes.menuOptions[index].icon,
+                    color: Colors.pinkAccent,
+                  ),
                   onTap: () {
                     // ! Forma anterior para navegar. Podemos especificar el tipo de animación (personalizar)
                     /*final route = MaterialPageRoute(
@@ -23,13 +29,14 @@ class HomeScreen extends StatelessWidget {
                     Navigator.push(context, route);*/
 
                     // Navegar a otra ruta
-                    Navigator.pushNamed(context, 'listview');
+                    Navigator.pushNamed(
+                        context, AppRoutes.menuOptions[index].route);
 
                     // Navegar a otra ruta sin poder regresar a la anterior (especial para login)
                     // Navigator.pushReplacement(context, newRoute)
                   },
                 ),
             separatorBuilder: (_, __) => Divider(),
-            itemCount: 10));
+            itemCount: AppRoutes.menuOptions.length));
   }
 }
