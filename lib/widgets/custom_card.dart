@@ -1,3 +1,4 @@
+import 'package:componentes_app/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class CustomCard extends StatelessWidget {
@@ -24,7 +25,10 @@ class CustomCard extends StatelessWidget {
         child: Column(
           children: [
             ListTile(
-                leading: Icon(icon),
+                leading: Icon(
+                  icon,
+                  color: AppTheme.primary,
+                ),
                 // Separar el tìtulo del subititulo
                 title: Padding(
                   padding: const EdgeInsets.only(bottom: 8.0),
