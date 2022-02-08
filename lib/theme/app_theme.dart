@@ -8,14 +8,16 @@ class AppTheme {
   // Crear una copia del tema light y sobre-escribir el estilo necesario
   // copyWith hace una copia del tema seleccionado para proceder a sobre-escribir el estilo que necesitamos
   static ThemeData lightTheme = ThemeData.light().copyWith(
-    // El color primario (hay ciertos Widgets que usan este color)
-    primaryColor: primary,
-    // AppBar Theme
-    appBarTheme: AppBarTheme(
-      color: primary,
-      elevation: 0,
-    ),
-  );
+      // El color primario (hay ciertos Widgets que usan este color)
+      primaryColor: primary,
+      // AppBar Theme
+      appBarTheme: AppBarTheme(
+        color: primary,
+        elevation: 0,
+      ),
+      // Text Buttons Theme
+      textButtonTheme:
+          TextButtonThemeData(style: TextButton.styleFrom(primary: primary)));
 
   // Definir un esquema de color para temas oscuros
   static ThemeData darkTheme = ThemeData.dark().copyWith(

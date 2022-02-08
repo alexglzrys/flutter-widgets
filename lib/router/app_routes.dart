@@ -1,4 +1,5 @@
 import 'package:componentes_app/models/models.dart';
+import 'package:componentes_app/screens/card_screen.dart';
 import 'package:componentes_app/screens/screens.dart';
 import 'package:flutter/material.dart';
 
@@ -30,7 +31,12 @@ class AppRoutes {
         route: 'listview_standar',
         name: 'ListView Standar',
         screen: ListviewStandarScreen(),
-        icon: Icons.zoom_out_map)
+        icon: Icons.zoom_out_map),
+    MenuOption(
+        route: 'card',
+        name: 'Card Widget',
+        screen: CardScreen(),
+        icon: Icons.card_giftcard)
   ];
 
   /*static Map<String, Widget Function(BuildContext)> routes = {
