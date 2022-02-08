@@ -17,7 +17,19 @@ class AppTheme {
       ),
       // Text Buttons Theme
       textButtonTheme:
-          TextButtonThemeData(style: TextButton.styleFrom(primary: primary)));
+          TextButtonThemeData(style: TextButton.styleFrom(primary: primary)),
+
+      // Definir un tema para los FloatingActionButton
+      floatingActionButtonTheme: FloatingActionButtonThemeData(
+          backgroundColor: primary, elevation: 5.0),
+
+      // Definir un tema para los ElevatedBuuton
+      elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+              primary: primary,
+              elevation: 1.0,
+              // StadiumBorder aplica bordes redondeados
+              shape: const StadiumBorder())));
 
   // Definir un esquema de color para temas oscuros
   static ThemeData darkTheme = ThemeData.dark().copyWith(
