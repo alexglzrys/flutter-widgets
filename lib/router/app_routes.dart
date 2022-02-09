@@ -17,11 +17,6 @@ class AppRoutes {
   // Definir mi lista de rutas (esto ayuda para definir su personalización)
   static final menuOptions = <MenuOption>[
     MenuOption(
-        route: 'home',
-        name: 'Home Screen',
-        screen: HomeScreen(),
-        icon: Icons.home),
-    MenuOption(
         route: 'listview',
         name: 'Componentes en Flutter',
         screen: ListviewScreen(),
@@ -61,6 +56,10 @@ class AppRoutes {
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
     Map<String, Widget Function(BuildContext)> appRoutes = {};
+
+    // El Home no aparece en las opciones de menú, pero forma parte del sistema de rutas (ruta inicial al mostrar)
+    appRoutes.addAll({'home': (BuildContext context) => HomeScreen()});
+
     // iterar por los elementos de opciones de menu
     for (final option in menuOptions) {
       // Generar un path como lo espera la propiedad routes
