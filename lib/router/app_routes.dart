@@ -45,7 +45,12 @@ class AppRoutes {
         route: 'avatar',
         name: 'Circle Avatar Widget',
         screen: AvatarScreen(),
-        icon: Icons.supervised_user_circle)
+        icon: Icons.supervised_user_circle),
+    MenuOption(
+        route: 'container-animated',
+        name: 'Container Widget',
+        screen: ContainerAnimatedScreen(),
+        icon: Icons.adb_rounded)
   ];
 
   /*static Map<String, Widget Function(BuildContext)> routes = {
