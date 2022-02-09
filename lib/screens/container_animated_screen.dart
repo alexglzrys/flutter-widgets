@@ -55,7 +55,13 @@ class _ContainerAnimatedScreenState extends State<ContainerAnimatedScreen> {
         title: Text('Animated Container'),
       ),
       body: Center(
-        child: Container(
+        // ? AnimatedContainer se comporta igual que un Container, pero tiene la capacidad de ser animado
+        child: AnimatedContainer(
+          // ! La unica propiedad obligatoria para un AnimatedContainer es la duración de la animación
+          duration: Duration(milliseconds: 400),
+          // ! La Clase Curve ofrece diferentes tipos de animación (Rebote) que podemos implementar en cualquier componente que acepte la propiedad curve
+          // https://api.flutter.dev/flutter/animation/Curves-class.html
+          curve: Curves.easeInOutBack,
           width: _width,
           height: _height,
           // color: _color, // No se puede usar la propiedad color y decoration al mismo tiempo, tiene que ser una u otra
