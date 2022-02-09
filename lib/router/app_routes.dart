@@ -40,7 +40,12 @@ class AppRoutes {
         route: 'alert',
         name: 'Alert Widget',
         screen: AlertScreen(),
-        icon: Icons.beach_access)
+        icon: Icons.beach_access),
+    MenuOption(
+        route: 'avatar',
+        name: 'Circle Avatar Widget',
+        screen: AvatarScreen(),
+        icon: Icons.supervised_user_circle)
   ];
 
   /*static Map<String, Widget Function(BuildContext)> routes = {

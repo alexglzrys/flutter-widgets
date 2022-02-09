@@ -13,3 +13,5 @@ export 'package:componentes_app/screens/listview_screen.dart';
 export 'package:componentes_app/screens/listview_standar_screen.dart';
 export 'package:componentes_app/screens/alert_screen.dart';
 export 'package:componentes_app/screens/card_screen.dart';
+
+export 'package:componentes_app/screens/avatar_screen.dart';
