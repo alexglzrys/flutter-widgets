@@ -70,6 +70,31 @@ class InputsScreen extends StatelessWidget {
                   formValues: formValues,
                 ),
                 SizedBox(height: 15),
+                // Select
+                DropdownButtonFormField<String>(
+                  // Options
+                  items: [
+                    DropdownMenuItem(
+                      child: Text('Admin'),
+                      value: 'Admin',
+                    ),
+                    DropdownMenuItem(
+                      child: Text('Developer'),
+                      value: 'Developer',
+                    ),
+                    DropdownMenuItem(
+                      child: Text('Project Leader'),
+                      value: 'Project Leader',
+                    ),
+                  ],
+                  onChanged: (value) {
+                    print(value);
+                    formValues['role'] = value ?? 'Admin';
+                  },
+                  value: 'Admin',
+                ),
+
+                SizedBox(height: 15),
                 ElevatedButton(
                     onPressed: () {
                       // * Ocultar el teclado tras presionar el boton

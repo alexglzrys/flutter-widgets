@@ -29,7 +29,7 @@ class CustomInputField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      autofocus: true,
+      //autofocus: true,
       initialValue: '',
       // ? Especial si deseamos que las palabras ingresadas sean con letra inicial en Mayúscula (Nombres)
       textCapitalization: TextCapitalization.words,
