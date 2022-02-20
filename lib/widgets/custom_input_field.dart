@@ -6,6 +6,8 @@ class CustomInputField extends StatelessWidget {
   final String? helperText;
   final IconData? suffixIcon;
   final IconData? icon;
+  final TextInputType? keyboardType;
+  final bool obscureText;
 
   const CustomInputField({
     Key? key,
@@ -14,6 +16,8 @@ class CustomInputField extends StatelessWidget {
     this.helperText,
     this.suffixIcon,
     this.icon,
+    this.keyboardType,
+    this.obscureText = false,
   }) : super(key: key);
 
   @override
@@ -23,6 +27,10 @@ class CustomInputField extends StatelessWidget {
       initialValue: '',
       // ? Especial si deseamos que las palabras ingresadas sean con letra inicial en Mayúscula (Nombres)
       textCapitalization: TextCapitalization.words,
+      // ? Podemos cambiar el tipo de teclado con base al tipo de entrada que acepta el campo
+      keyboardType: keyboardType,
+      // ? propiedad para ocultar el contenido del campo (password), por defecto esta en falso
+      obscureText: obscureText,
       onChanged: (value) {
         print('Valor: $value');
       },

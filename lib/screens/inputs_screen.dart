@@ -18,15 +18,32 @@ class InputsScreen extends StatelessWidget {
             children: [
               CustomInputField(
                 labelText: 'Nombre',
-                hintText: 'Ingrese su nombre completo',
+                hintText: 'Ingrese su nombre',
                 helperText: 'Solo textos y espacios',
                 suffixIcon: Icons.person,
               ),
+              SizedBox(height: 15),
               CustomInputField(
-                labelText: 'Profesión',
-                hintText: 'Ingrese el nombre de su profesión',
+                labelText: 'Apellidos',
+                hintText: 'Ingrese sus apellidos',
                 helperText: 'Solo textos y espacios',
-                suffixIcon: Icons.production_quantity_limits,
+                suffixIcon: Icons.person,
+              ),
+              SizedBox(height: 15),
+              CustomInputField(
+                labelText: 'Correo electrónico',
+                hintText: 'Ingrese su correo electrónico',
+                helperText: 'Solo textos y espacios',
+                suffixIcon: Icons.email,
+                keyboardType: TextInputType.emailAddress,
+              ),
+              SizedBox(height: 15),
+              CustomInputField(
+                labelText: 'Contraseña',
+                hintText: 'Ingrese su contraseña',
+                helperText: 'Solo textos y espacios',
+                suffixIcon: Icons.password,
+                obscureText: true,
               )
             ],
           ),
