@@ -45,7 +45,12 @@ class AppRoutes {
         route: 'container-animated',
         name: 'Container Widget',
         screen: ContainerAnimatedScreen(),
-        icon: Icons.adb_rounded)
+        icon: Icons.adb_rounded),
+    MenuOption(
+        route: 'inputs',
+        name: 'Text Inputs',
+        screen: InputsScreen(),
+        icon: Icons.rounded_corner)
   ];
 
   /*static Map<String, Widget Function(BuildContext)> routes = {
