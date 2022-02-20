@@ -9,6 +9,10 @@ class CustomInputField extends StatelessWidget {
   final TextInputType? keyboardType;
   final bool obscureText;
 
+  final String formProperty; // Identificador del control de formulario
+  final Map<String, String>
+      formValues; // El modelo que deseo gestionar mediante el formulario
+
   const CustomInputField({
     Key? key,
     this.labelText,
@@ -18,6 +22,8 @@ class CustomInputField extends StatelessWidget {
     this.icon,
     this.keyboardType,
     this.obscureText = false,
+    required this.formProperty,
+    required this.formValues,
   }) : super(key: key);
 
   @override
@@ -31,8 +37,11 @@ class CustomInputField extends StatelessWidget {
       keyboardType: keyboardType,
       // ? propiedad para ocultar el contenido del campo (password), por defecto esta en falso
       obscureText: obscureText,
+      // ? gestionar el valor ingresado en esta caja de formulario
       onChanged: (value) {
-        print('Valor: $value');
+        // Asignar a la propiedad correcta en el modelo, el valor de esta caja de texto
+        formValues[formProperty] = value;
+        //print('Valor: $value');
       },
       // ? Validar el contenido de esta caja de texto
       validator: (value) {
