@@ -17,3 +17,5 @@ export 'package:componentes_app/screens/card_screen.dart';
 export 'package:componentes_app/screens/avatar_screen.dart';
 export 'package:componentes_app/screens/container_animated_screen.dart';
 export 'package:componentes_app/screens/inputs_screen.dart';
+
+export 'package:componentes_app/screens/slider_checkbox_screen.dart';

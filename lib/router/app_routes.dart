@@ -50,7 +50,12 @@ class AppRoutes {
         route: 'inputs',
         name: 'Text Inputs',
         screen: InputsScreen(),
-        icon: Icons.rounded_corner)
+        icon: Icons.rounded_corner),
+    MenuOption(
+        route: 'slider_checkbox',
+        name: 'Slider && Checkbox',
+        screen: SliderCheckboxScreen(),
+        icon: Icons.play_circle)
   ];
 
   /*static Map<String, Widget Function(BuildContext)> routes = {
