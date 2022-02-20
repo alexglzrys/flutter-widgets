@@ -29,7 +29,24 @@ class AppTheme {
               primary: primary,
               elevation: 1.0,
               // StadiumBorder aplica bordes redondeados
-              shape: const StadiumBorder())));
+              shape: const StadiumBorder())),
+      // Decoración de widgets de tipo Input
+      inputDecorationTheme: InputDecorationTheme(
+          floatingLabelStyle: TextStyle(color: primary),
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: primary),
+            borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(10), topRight: Radius.circular(10)),
+          ),
+          focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: primary),
+              borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(10),
+                  topRight: Radius.circular(10))),
+          border: OutlineInputBorder(
+              borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(10),
+                  topRight: Radius.circular(10)))));
 
   // Definir un esquema de color para temas oscuros
   static ThemeData darkTheme = ThemeData.dark().copyWith(
